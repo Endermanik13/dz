@@ -1,0 +1,37 @@
+:root {
+  --md-primary-fg-color: #1e90ff; /* Цвет шапки */
+  --md-accent-fg-color: #ff6f61; /* Цвет акцентов */
+}
+
+.md-header, .md-tabs {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.md-nav__link:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.md-content {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
