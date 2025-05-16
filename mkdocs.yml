@@ -1,12 +1,24 @@
-site_name: My Project
-theme: material
+site_name: CalculatorMkDocs
+theme:
+  name: material
+  palette:
+    scheme: slate  # Тёмная тема по умолчанию
+  features:
+    - content.code.copy  # Кнопка копирования кода
+    - content.tabs  # Вкладки
+    - navigation.tracking  # Анимация навигации
+  custom_dir: docs/  # Кастомные стили
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
 nav:
-  - Home: index.md
-  - Modules: modules.md
-plugins:
-  - mkdocstrings:
-      handlers:
-        python:
-          options:
-            show_source: true
-            docstring_style: google
+  - Главная: index.md
+  - Модули: modules.md
+
+extra_css:
+  - custom.css
