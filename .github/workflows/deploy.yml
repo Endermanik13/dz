@@ -15,6 +15,15 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install mkdocs mkdocstrings mkdocs-material
+          pip install mkdocs==1.6.0
+          pip install mkdocstrings==0.26.0
+          pip install mkdocstrings-python==1.11.0
+          pip install mkdocs-material==9.5.39
+      - name: Check dependencies
+        run: |
+          pip show mkdocs
+          pip show mkdocstrings
+          pip show mkdocstrings-python
+          pip show mkdocs-material
       - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force
