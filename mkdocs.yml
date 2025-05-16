@@ -1,24 +1,30 @@
-site_name: CalculatorMkDocs
+site_name: My Project
 theme:
   name: material
   palette:
-    scheme: slate  # Тёмная тема по умолчанию
+    scheme: slate  # Тёмный режим, похожий на Obsidian
+  primary: grey  # Основной цвет
+  accent: indigo  # Цвет акцента
+  font:
+    text: Roboto  # Шрифт, как в Obsidian
+    code: JetBrains Mono  # Шрифт для кода
   features:
     - content.code.copy  # Кнопка копирования кода
-    - content.tabs  # Вкладки
-    - navigation.tracking  # Анимация навигации
-  custom_dir: docs/  # Кастомные стили
-
-markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-
+    - navigation.tabs  # Вкладки навигации
 nav:
-  - Главная: index.md
-  - Модули: modules.md
-
+  - Home: index.md
+  - Modules: modules.md
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+            docstring_style: google
+  - obsidian-interactive-graph  # Плагин для интерактивных графов
+extra_javascript:
+  - https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js
+  - https://fastly.jsdelivr.net/npm/echarts/dist/echarts.min.js
+  - assets/javascripts/interactive_graph.js
 extra_css:
-  - custom.css
+  - assets/stylesheets/interactive_graph.css
