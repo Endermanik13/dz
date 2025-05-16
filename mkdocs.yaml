@@ -1,7 +1,0 @@
-site_name: My Project
-theme: material
-nav:
-  - Home: index.md
-  - Modules: modules.md
-plugins:
-  - mkdocstrings
